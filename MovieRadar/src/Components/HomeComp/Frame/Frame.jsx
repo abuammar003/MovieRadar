@@ -10,7 +10,7 @@ const Frame = () => {
     <div className='frameContainer'>
         <div className="navFrame">
         <div className="navLogoFrame">
-          <h1><span>M</span>OVIES<span>A</span>DDA</h1>
+          <h1><span>M</span>OVIE<span>R</span>ADAR</h1>
         </div>
 
         <div className="navLinkFrame">   
