@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* ---------- Frame Container -----------*/
+.frameContainer {
+    background: linear-gradient(rgba(0, 0, 0, 0.795), rgba(0, 0, 0, 0.788)), url(https://maven-uploads.s3.amazonaws.com/120386748/projects/netflix%20image.jpg);
+    width: 100%;
+    height: 99.5vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+/* ---------- Navbar -----------*/
+.navFrame { 
+    width: 100%;
+    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    /* border: 1px solid black; */
+}
+
+.navLogoFrame h1 {
+    font-size: clamp(20px, 2.5vw, 25px);
+    color: #e50914;
+}
+
+.navLogoFrame h1 span {
+    font-size: clamp(30px, 4vw, 40px);
+}
+
+button {
+    text-decoration: none;
+    font-size: clamp(17px, 2vw, 20px);
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.486);
+    padding: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.navFrame ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+}
+.navFrame ul li {
+    list-style-type: none;
+
+}
+.navIcon {
+    font-size: clamp(20px, 3vw, 25px);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/* ---------- Frame Info -----------*/
+.infoFrame {
+    height: 84vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
+}
+
+.paraInfoFrame h1 {
+    font-size: clamp(35px, 4.5vw, 45px);
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.paraInfoFrame h3 {
+    font-size: clamp(19px, 2.5vw, 22px);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    font-family: "Arimo", sans-serif;
+    font-weight: 400;
+}
+
+.paraInfoFrame p {
+    font-size: clamp(17px, 2vw, 20px);
+    font-weight: 15;
+    margin-bottom: 0.5rem;
+}
+.paraInfoFrame p span {
+    color: #e50914;
+}
+
+.cntInfoFrame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+input.searchInput{
+    font-size: clamp(18px, 2.5vw, 22px);
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 8px 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.623);
+}
+.input .searchInput:focus {
+    box-shadow: 0 0 8px 3px #4484c4;
+}
+.cntInfoFrame .btn {
+    /* width: 80%; */
+    background-color: #e50914;
+    color: white;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: clamp(17px, 2vw, 20px);
+    cursor: pointer;
+}

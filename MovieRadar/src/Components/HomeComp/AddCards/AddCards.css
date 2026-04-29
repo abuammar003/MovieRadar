@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- Frame Cards -----------*/
+.addCardsMain {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    /* height: 100vh; */
+    width: 100%;
+    background: linear-gradient(#0a133be8, #400e20ce);
+    padding: 0px 0px 20px 0px;
+    gap: 1rem;
+}
+.addCard {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    padding: 2rem 2rem;
+    gap: 1rem;
+}
+
+/* .addImage {
+    width: 50%;
+} */
+.addImage img {
+    width: 100%;
+    height: clamp(280px, 320px, 350px);
+    border-radius: 10px;
+}
+.addCrdData {
+    width: 50%;
+    text-align: center;
+    align-items: center;
+}
+.addCrdData h1 {
+    margin-bottom: 10px;
+    font-size: clamp(32px, 3.5vw, 40px);
+    font-family: "Arimo", sans-serif;
+}
+.addCrdData p {
+    font-size: clamp(17px, 2vw, 20px);
+    font-family: "Arimo", sans-serif;
+}
+
+
+@media (max-width: 668px) {
+    .addCard {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 2rem;
+        gap: 1rem;
+    }
+    .addCrdData {
+        width: 100%;
+    }
+
+    .addImage img {
+        width: 100%;
+        height: clamp(200px, 240px, 280px);
+    }
+}
