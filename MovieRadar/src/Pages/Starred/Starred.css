@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.strdMain {
+    height: 100vh;
+}
+
+.strdNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 1rem 1.5rem;
+    background-color: black;
+    color: white;
+}
+.strdNav h1 {
+    font-size: clamp(22px, 2.7vw, 30px);
+}
+.strdNav .backHome {
+     font-size: clamp(19px, 2vw, 23px);
+}

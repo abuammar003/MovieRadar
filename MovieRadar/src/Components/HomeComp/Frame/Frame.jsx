@@ -1,7 +1,8 @@
 import React from 'react';
+// import {Link} from 'react-router-dom';
 import "./Frame.css";
 import { FaSearch, FaStar  } from "react-icons/fa";
-import { GoHomeFill } from "react-icons/go";
+// import { GoHomeFill } from "react-icons/go";
 
 
 const Frame = () => {
@@ -15,9 +16,13 @@ const Frame = () => {
 
         <div className="navLinkFrame">   
           <ul>
-            <li className='navIcon'> < GoHomeFill /> </li>
-            <li className='navIcon'> <FaStar /> </li>
-            <li className='navIcon'> <FaSearch /> </li>
+            {/* <li className='navIcon'> < GoHomeFill /> </li> */}
+            <a href='/Starred'>
+              <li className='navIcon'> <FaStar /> </li>
+            </a>
+            <a href='/Search'>
+              <li className='navIcon'> <FaSearch /> </li>
+            </a>
           </ul>
         </div>
       </div>
@@ -33,15 +38,13 @@ const Frame = () => {
               All in one simple and fast platform.</h3>
           <p>Make better choices with <span>MovieRadar</span>.</p>
           <div className="cntInfoFrame">
-            <input
-              type="text"
-              placeholder="Search for Movie..."
-              className="searchInput"
-            />
+            <a href='/Search'>
+              <input type="text" placeholder="Search for Movie..." className="searchInput" />
+            </a>
          
-              {/* <Link to="/SignUp"> */}
+              <a href="/Browse">
                 <button className="btn">Browse Movies</button>
-              {/* </Link> */}
+              </a>
            
           </div>
         </div>
