@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.modalOverlay{
+    position: fixed;
+    top: 0;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.modal{
+    background: #111;
+    color: white;
+
+    width: 80%;
+    max-width: 700px;
+
+    padding: 2rem;
+    border-radius: 12px;
+
+    position: relative;
+}
+
+.modal img{
+    width: 200px;
+    border-radius: 10px;
+}
+
+.modal button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    cursor: pointer;
+}

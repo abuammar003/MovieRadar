@@ -1,7 +1,8 @@
 import React from 'react';
 // import {Link} from 'react-router-dom';
 import "./Frame.css";
-import { FaSearch, FaStar  } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+// import { FaSearch, FaStar  } from "react-icons/fa";
 // import { GoHomeFill } from "react-icons/go";
 
 
@@ -14,16 +15,10 @@ const Frame = () => {
           <h1><span>M</span>OVIE<span>R</span>ADAR</h1>
         </div>
 
-        <div className="navLinkFrame">   
-          <ul>
-            {/* <li className='navIcon'> < GoHomeFill /> </li> */}
-            <a href='/Starred'>
-              <li className='navIcon'> <FaStar /> </li>
-            </a>
-            <a href='/Search'>
-              <li className='navIcon'> <FaSearch /> </li>
-            </a>
-          </ul>
+        <div className="navLinkFrame">
+          <Link to={'/Browse'}>
+          <button className='btn navBtn'>Get Start</button>   
+          </Link>
         </div>
       </div>
 
@@ -32,9 +27,9 @@ const Frame = () => {
         {/*------ Frame Info ------*/}
       <div className="infoFrame">
         <div className="paraInfoFrame">
-          <h1>Your Ultimate Movie <br /> Information Hub</h1>
-          <h3>Find complete details about any movie instantly <br />
-              Including ratings, release year, and cast <br />
+          <h1>Your Ultimate Movie Information Hub</h1>
+          <h3>Find complete details about any movie instantly
+              Including ratings, release year, and cast 
               All in one simple and fast platform.</h3>
           <p>Make better choices with <span>MovieRadar</span>.</p>
           <div className="cntInfoFrame">
@@ -42,9 +37,9 @@ const Frame = () => {
               <input type="text" placeholder="Search for Movie..." className="searchInput" />
             </a>
          
-              <a href="/Browse">
+              <Link to="/Browse">
                 <button className="btn">Browse Movies</button>
-              </a>
+              </Link>
            
           </div>
         </div>

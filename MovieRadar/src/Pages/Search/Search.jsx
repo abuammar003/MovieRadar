@@ -1,43 +1,32 @@
-import React, { useState } from 'react';
+import { useContext } from 'react';
 import "./Search.css";
-import { FaSearch } from "react-icons/fa";
-import { GoHomeFill } from "react-icons/go";
-import { searchMovies } from "../../api";
+import { FaRegBookmark } from "react-icons/fa";
+// import { searchMovies } from "../../api";
+import { MovieRadarContext } from '../../Context/Context';
+import NavbarMain from "../../Components/NavbarMain/NavbarMain";
 
 
 const Search = () => {
-  const [query, setQuery] = useState('');
-  const [result, setResult] = useState([]);
-
-  async function handleSearch(e) {
-      const value = e.target.value;
-      setQuery(value);
-
-      if(value.length > 2) {
-        const res = await searchMovies(value);
-        setResult(res.data.results);
-      }
-  }
+    const {query, result, handleSearch, loading, error, handleStarred} = useContext(MovieRadarContext);
+   
 
   return (
-    <div>
+    <div className='srchMain'>
+
+      <NavbarMain />
 
       {/*----- Search Navbar -----*/}
         <div className="srchNav">
-            <h1>Seach</h1>
+
             <div className="srchBar">
                 <input 
-                  type='search' 
-                  placeholder='Search Your Movie...' 
+                  type='text' 
+                  placeholder='Search Your Movie, TV Shows...' 
                   value={query}
                   onChange={handleSearch}  
-                  />
-
-                {/* <button className='srchIcon'> < FaSearch /> </button> */}
+                />
             </div>
-            <a href='/'>
-                <button className='backHome'> <GoHomeFill /> </button>
-            </a>
+
         </div>
 
         
@@ -45,21 +34,40 @@ const Search = () => {
       {/*----- Search Container -----*/}
 
         <div className="srchContainer">
-          {/* {result.length > 0 ? */}
 
-            {result?.map((movie) => (
+          {/* {loading ?  <h1 className='msgContent'> Loading... </h1>  : ""} */}
+
+          {!loading && !error && result.length < 2 && <h1>Search Your Movies...</h1> }
+
+
+          {error && <h1 className='msgContent'> {error} </h1>}
+ 
+          {!loading && !error && result.length > 0 && (result.map((movie) => (
               <div className="srchCards" key={movie.id}>
-
-    {/* https://image.tmdb.org/t/p/w500=> This is the Base URL of TMDB for Images(It is Required to Access IMG)*/}
+                
+                            {/* https://image.tmdb.org/t/p/w500=> This is the Base URL 
+                                  of TMDB for Images(It is Required to Access IMG)*/}
                     <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                     
-                    <h2> { movie.title.slice(0, 25) } </h2>
-                    <h5> Rating: {movie.vote_average} </h5>
+                      <div className="cardDet">
+                    
+                        <div className="cardInfo">
+                            <h2> { movie.title.slice(0, 20) } </h2>
+                            <p> Rating: {movie.vote_average} </p>
+                        </div>
+                    
+                        <div className="cardIcon">
+                            <button className='strCardIcon'> <FaRegBookmark onClick={handleStarred}/> </button>
+                        </div>
+                                        
+                      </div>
                 </div>
-            ))}
+            )))  
+          } 
 
-         {/* : <h1>Search Your Movies</h1> */}
-        {/* } */}
+
+          
+           
         </div>
 
     

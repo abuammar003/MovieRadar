@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Home from "../Home/Home"
 import Footer from "../../Components/Footer/Footer"
@@ -10,23 +10,25 @@ import Context from '../../Context/Context';
 const Main = () => {
 
   return (
-    <div>
-        <BrowserRouter>
+    <div> 
+
+      <BrowserRouter>
 
         <Context >
 
         <Routes>
             <Route exact path='/' element={ <Home />} />
+
+            <Route exact path='/Browse' element= { <Browse />} />
             <Route exact path='/Search' element={ <Search />} />
             <Route exact path='/Starred' element={ <Starred />} />
-            <Route exact path='/Browse' element= { <Browse />} />
         </Routes>
 
         </Context>
-
-      <Footer />
-
     </BrowserRouter>
+      
+    <Footer />
+    
     </div>
   )
 }

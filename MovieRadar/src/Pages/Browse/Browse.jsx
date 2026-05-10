@@ -1,50 +1,69 @@
-import React, { useContext } from 'react';
-import "./Browse.css";
-import { GoHomeFill } from "react-icons/go";
-import { FaSearch } from "react-icons/fa";
+import { useContext } from 'react';
+import "./Browse.css"; 
+// import { FaStar  } from "react-icons/fa";
+import { FaRegBookmark } from "react-icons/fa";
 import { MovieRadarContext } from "../../Context/Context";
+import NavbarMain from "../../Components/NavbarMain/NavbarMain";
+import Detail from '../../Components/Details/Details';
+
+
 
 
 const Browse = () => {
-    const { movieData } = useContext(MovieRadarContext);
-    console.log(movieData)
+    const { trendingMovies, loading, error, handleStarred, 
+            handleMovieDetail, showDetail } = useContext(MovieRadarContext);
+    // console.log(trendingMovies)
 
-  return (
-    <div>
+  return ( 
+    <div className='brwsMain'>
 
-        {/*----- Browse Navbar -----*/}
-        <div className="brwsNav">
-            <h1> Browse </h1>
+        <NavbarMain />
+       
 
-            <div className="brwsNavIcons">
-                <a href='/Search'>
-                    <button className='brwsNavIcon1'> <FaSearch /> </button>
-                </a>
-                <a href='/'>
-                    <button className='brwsNavIcon2'> <GoHomeFill /> </button>
-                </a>
-            </div> 
-
-        </div>
-
-
-        {/*----- Browse Container -----*/}
             <h1 className='brwsConteinerHeading'>Trending Movies</h1>
+        {/*----- Browse Container -----*/}
         <div className="brwsContainer">
 
-            {movieData?.map((movie) => (
-                <div className="brwsCards" key={movie.id}>
+            {/* {loading && <h1>Loading...</h1>} */}
 
-    {/* https://image.tmdb.org/t/p/w500=> This is the Base URL of TMDB for Images(It is Required to Access IMG)*/}
+            {/* {error && <h1>{error}</h1>} */}
+
+
+            {!error ? ( trendingMovies.map((movie) => (
+                <div className="brwsCards" key={movie.id} onClick={() => handleMovieDetail(movie.id)} >
+
+                            {/* https://image.tmdb.org/t/p/w500=> This is the Base URL 
+                                of TMDB for Images(It is Required to Access IMG)*/}
                     <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                     
-                    <h2> { movie.title } </h2>
-                    <h5> Rating: {movie.vote_average} </h5>
+                    <div className="cardDet">
+
+                        <div className="cardInfo">
+                            <h2> { movie.title.slice(0, 20) } </h2>
+                            <p> ⭐ Rating: {movie.vote_average} </p>
+                        </div>
+
+                        <div className="cardIcon">
+                            <button className='strCardIcon'
+                                    onClick={(e) =>{ e.stopPropagation();
+                                        handleStarred(movie)
+                                    }}    
+                            > <FaRegBookmark /> </button>
+                        </div>
+                    
+                    </div>
                 </div>
-            ))}
+            ))
+            ) : (
+                <h1>{error}</h1>
+            )
+        }
+
+
 
         </div>
 
+            {showDetail && <Detail />}
 
     </div>
   )

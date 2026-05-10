@@ -52,7 +52,12 @@ button {
     cursor: pointer;
 }
 
-.navFrame ul {
+.navBtn {
+    font-size: clamp(15px, 1.7vw, 19px) !important; 
+    padding: 6px !important;
+}
+
+/* .navFrame ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,7 +72,7 @@ button {
     font-size: clamp(20px, 3vw, 25px);
     color: white;
     cursor: pointer;
-}
+} */
 
 
 
@@ -75,32 +80,36 @@ button {
 .infoFrame {
     height: 84vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
     color: #fff;
     padding: 1rem;
+    /* margin-top: 7%; */
+    margin-left: 3%;
 }
 
 .paraInfoFrame h1 {
-    font-size: clamp(35px, 4.5vw, 45px);
+    font-size: clamp(30px, 3.8vw, 45px);
     font-family: "Roboto", sans-serif;
     font-weight: 800;
     margin-bottom: 1rem;
 }
 
 .paraInfoFrame h3 {
-    font-size: clamp(19px, 2.5vw, 22px);
+    width: clamp(75%, 78%, 80%);
+    font-size: clamp(19px, 2vw, 22px);
+    line-height: clamp(22px, 2.5vw, 30px);
     font-weight: 300;
     margin-bottom: 2.5rem;
     font-family: "Arimo", sans-serif;
-    font-weight: 400;
+    text-align: start;
 }
 
 .paraInfoFrame p {
     font-size: clamp(17px, 2vw, 20px);
     font-weight: 15;
     margin-bottom: 0.5rem;
+    font-family: "Arimo", sans-serif;;
 }
 .paraInfoFrame p span {
     color: #e50914;
@@ -108,9 +117,10 @@ button {
 
 .cntInfoFrame{
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
     gap: 1rem;
 }
 
@@ -125,12 +135,25 @@ input.searchInput{
 .input .searchInput:focus {
     box-shadow: 0 0 8px 3px #4484c4;
 }
-.cntInfoFrame .btn {
+.btn {
     /* width: 80%; */
     background-color: #e50914;
     color: white;
     border-radius: 8px;
-    padding: 6px 12px;
-    font-size: clamp(17px, 2vw, 20px);
+    padding: 8px 12px;
+    font-size: clamp(18px, 2vw, 22px);
     cursor: pointer;
+}
+
+
+
+
+@media (max-width: 668px) {
+    .navFrame {
+        padding: 1.2rem 1rem;
+    }
+
+    /* .paraInfoFrame h3 {
+        width: ;
+    } */
 }
