@@ -46,8 +46,7 @@ const Browse = () => {
                         <div className="cardIcon">
                             <button className='strCardIcon'
                                     onClick={(e) =>{ e.stopPropagation();
-                                        handleStarred(movie)
-                                    }}    
+                                                     handleStarred(movie) }}    
                             > <FaRegBookmark /> </button>
                         </div>
                     
@@ -62,6 +61,8 @@ const Browse = () => {
 
 
         </div>
+
+          {/* Show Movie Detail */}
 
             {showDetail && <Detail />}
 

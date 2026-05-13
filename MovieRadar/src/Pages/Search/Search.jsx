@@ -4,10 +4,12 @@ import { FaRegBookmark } from "react-icons/fa";
 // import { searchMovies } from "../../api";
 import { MovieRadarContext } from '../../Context/Context';
 import NavbarMain from "../../Components/NavbarMain/NavbarMain";
+import Detail from '../../Components/Details/Details';
 
 
 const Search = () => {
-    const {query, result, handleSearch, loading, error, handleStarred} = useContext(MovieRadarContext);
+    const { query, result, handleSearch, loading, error, handleStarred, 
+            handleMovieDetail, showDetail } = useContext(MovieRadarContext);
    
 
   return (
@@ -41,9 +43,10 @@ const Search = () => {
 
 
           {error && <h1 className='msgContent'> {error} </h1>}
+
  
           {!loading && !error && result.length > 0 && (result.map((movie) => (
-              <div className="srchCards" key={movie.id}>
+              <div className="srchCards" key={movie.id} onClick={() => handleMovieDetail(movie.id)} >
                 
                             {/* https://image.tmdb.org/t/p/w500=> This is the Base URL 
                                   of TMDB for Images(It is Required to Access IMG)*/}
@@ -57,7 +60,10 @@ const Search = () => {
                         </div>
                     
                         <div className="cardIcon">
-                            <button className='strCardIcon'> <FaRegBookmark onClick={handleStarred}/> </button>
+                            <button className='strCardIcon'  onClick={(e) => {e.stopPropagation;
+                                                            handleStarred(movie) }}> 
+                                  <FaRegBookmark /> 
+                            </button>
                         </div>
                                         
                       </div>
@@ -65,12 +71,13 @@ const Search = () => {
             )))  
           } 
 
-
-          
-           
         </div>
 
-    
+
+          {/* Show Movie Detail */}
+          {showDetail && <Detail /> }  
+           
+
     </div>
   )
 }

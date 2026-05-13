@@ -10,26 +10,27 @@ const Detail = () => {
   if(!selectedMovie) return null;
 
   return (
-    <div className="modalOverlay">
+    <div className="dtlMain">
 
-      <h1>Movie Detail</h1>
 
-      <div className="modal">
+      <div className="dtlContainer">
+        <h1 className="dtlHeading">Movie Detail</h1>
 
         <button onClick={closeDetail}> X </button>
 
-        <img
-          src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}
-          alt={selectedMovie.title}
-        />
 
-        <h1>{selectedMovie.title}</h1>
+        <div className="dtlImg">
+          <img src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}
+               alt={selectedMovie.title} />
+        </div>
 
-        <p>{selectedMovie.overview}</p>
-
-        <h3>⭐ Rating: {selectedMovie.vote_average}</h3>
-
-        <h3>📅 Release: {selectedMovie.release_date}</h3>
+        <div className="dtlText">
+          <h1>{selectedMovie.title}</h1>
+          <p>{selectedMovie.overview}</p>
+          <h3> Revenue:  <span> ${selectedMovie.revenue}/- </span> </h3>
+          <h3>⭐ Rating: {selectedMovie.vote_average}</h3>
+          <h3>📅 Release: {selectedMovie.release_date}</h3>
+        </div>
 
       </div>
 

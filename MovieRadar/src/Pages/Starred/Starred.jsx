@@ -1,8 +1,6 @@
 import { useContext } from 'react';
 import "./Starred.css";
-import { Link } from 'react-router-dom';
-import { GoHomeFill } from "react-icons/go";
-import { FaStar } from "react-icons/fa";
+import { FaRegBookmark } from "react-icons/fa";
 import { MovieRadarContext } from '../../Context/Context';
 import NavbarMain from "../../Components/NavbarMain/NavbarMain";
 
@@ -23,7 +21,7 @@ export const Starred = () => {
             {starredMovies.map((movie) => (
               <div className="strdCards" key={movie.id}>
 
-                  <FaStar className='strdIcon'onClick={handleStarred(movie.id)}/> 
+                  <FaRegBookmark className='strdIcon'onClick={handleStarred(movie.id)}/> 
 
                             {/* https://image.tmdb.org/t/p/w500=> This is the Base URL 
                                 of TMDB for Images(It is Required to Access IMG)*/}
