@@ -20,24 +20,28 @@
 .addCard {
     display: flex;
     justify-content: space-between;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     width: 100%;
     background-color: black;
     padding: 2rem 2rem;
-    gap: 1rem;
+    /* gap: 1rem; */
 }
 
-/* .addImage {
+.addImage {
     width: 50%;
-} */
+    display: flex;
+    justify-content: center;
+}
 .addImage img {
     width: 100%;
+    /* width: auto; */
     height: clamp(280px, 320px, 350px);
     border-radius: 10px;
+    /* object-fit: cover; */
 }
 .addCrdData {
-    width: 50%;
+    width: 45%;
     text-align: center;
     align-items: center;
 }

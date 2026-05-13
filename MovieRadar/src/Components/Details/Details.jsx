@@ -28,7 +28,7 @@ const Detail = () => {
           <h1>{selectedMovie.title}</h1>
           <p>{selectedMovie.overview}</p>
           <h3> Revenue:  <span> ${selectedMovie.revenue}/- </span> </h3>
-          <h3>⭐ Rating: {selectedMovie.vote_average}</h3>
+          <h3>⭐ Rating: { selectedMovie.vote_average.toString().slice(0, 3) }</h3>
           <h3>📅 Release: {selectedMovie.release_date}</h3>
         </div>
 

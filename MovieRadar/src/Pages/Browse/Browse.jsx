@@ -40,7 +40,7 @@ const Browse = () => {
 
                         <div className="cardInfo">
                             <h2> { movie.title.slice(0, 20) } </h2>
-                            <p> ⭐ Rating: {movie.vote_average} </p>
+                            <p> ⭐ Rating: { movie.vote_average.toString().slice(0, 3) } </p>
                         </div>
 
                         <div className="cardIcon">

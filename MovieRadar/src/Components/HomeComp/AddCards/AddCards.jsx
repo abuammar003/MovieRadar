@@ -1,28 +1,32 @@
 import React from 'react';
 import "./AddCards.css";
+import trending_section from "../../../assets/MovieRadar-Trending_Section.png";
+import search_section from "../../../assets/MovieRadar-Search_SectionIMG.png";
+import responsive_section from "../../../assets/MovieRadar-Responsive_Sect-2.png";
+import detail_section from "../../../assets/MovieRadar-Detail_Section.png";
 
 const AddCards = () => {
 
     const frameCards = [
     {
-      image: "https://www.flatpanelshd.com/pictures/MZnkkQ.gif",
-      title: "Enjoy on your TV",
-      description: "Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,Blu-ray players and more."
+      image: trending_section,
+      title: "Stay Updated With Trending Movies",
+      description: "Discover what’s popular in the movie world with real-time ratings, release details, and trending titles."
     },
     {
-      image: "https://cdn.shopify.com/s/files/1/0516/3761/6830/articles/downloading-netflix-movies-on-tablet_6418c98f-e30f-463c-a1a2-e88f1b9bda21.jpg?v=1768461857",
-      title: "Download your shows",
-      description: "Save your favourites easily and always have something to watch."
+      image: search_section,
+      title: "Search & Explore Movies Easily",
+      description: "Find detailed movie information instantly including storylines, cast, genres, and audience ratings."
     },
     {
-      image: "https://i.pinimg.com/originals/86/bd/10/86bd10cd84b3c90bd759c2c50417086e.gif",
-      title: "Watch everywhere",
-      description: "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV."
+      image: responsive_section,
+      title: "Built For Every Device",
+      description: "Browse movie details smoothly across desktop, tablet, and mobile with a clean responsive design."
     },
     {
-      image: "https://uploads-ssl.webflow.com/628e0fe9a6929e74a5b07735/628e408f623bf975fa17d1dc_kids.png",
-      title: "Create profiles for kids",
-      description: "Send children on adventures with their favourite characters in a space made just for them."
+      image: detail_section,
+      title: "Get Detailed Movie Insights",
+      description: "View storylines, ratings, release date, revenue, and more in one place."
     }
   ]; 
 

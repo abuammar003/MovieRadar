@@ -17,10 +17,10 @@ const Footer = () => {
           </div>
 
             <div className="ftrContIcons">
-                <a href="/"> < FaGithub /> </a>
+                <a href="https://github.com/abuammar003/MovieRadar"> < FaGithub /> </a>
                 
-                <a href='https://www.linkedin.com/in/ammar-shah-252448284/'> < FaLinkedin /> </a> 
-                <a href='https://www.instagram.com/ammarshah_03/'> < FaInstagram  /> </a>
+                <a href='https://www.linkedin.com/in/abu-ammar-252448284/'> < FaLinkedin /> </a> 
+                <a href='https://www.instagram.com/abuammar_03/'> < FaInstagram  /> </a>
             </div>
         </div>
 
