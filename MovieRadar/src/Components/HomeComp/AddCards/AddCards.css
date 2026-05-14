@@ -73,6 +73,10 @@
         width: 100%;
     }
 
+    .addImage {
+        width: 100%;
+        height: ;
+    }
     .addImage img {
         width: 100%;
         height: clamp(200px, 240px, 280px);

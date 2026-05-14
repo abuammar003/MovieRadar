@@ -7,7 +7,7 @@ import detail_section from "../../../assets/MovieRadar-Detail_Section.png";
 
 const AddCards = () => {
 
-    const frameCards = [
+    const frameCards = [ 
     {
       image: trending_section,
       title: "Stay Updated With Trending Movies",
