@@ -52,11 +52,11 @@ const Search = () => {
                                   of TMDB for Images(It is Required to Access IMG)*/}
                     <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                     
-                      <div className="cardDet">
+                      <div className="cardDet">  
                     
                         <div className="cardInfo">
                             <h2> { movie.title.slice(0, 20) } </h2>
-                            <p> Rating: {movie.vote_average} </p>
+                            <p> Rating: { movie.vote_average.toString().slice(0, 3) } </p>
                         </div>
                     
                         <div className="cardIcon">

@@ -42,7 +42,7 @@ const Browse = () => {
                             <h2> { movie.title.slice(0, 20) } </h2>
                             <p> ⭐ Rating: { movie.vote_average.toString().slice(0, 3) } </p>
                         </div>
-
+ 
                         <div className="cardIcon">
                             <button className='strCardIcon'
                                     onClick={(e) =>{ e.stopPropagation();

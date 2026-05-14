@@ -1,6 +1,6 @@
 import React from 'react';
 import "./AddCards.css";
-import trending_section from "../../../assets/MovieRadar-Trending_Section.png";
+import trending_section from "../../../assets/MovieRadar-Trendinf_Section.png";
 import search_section from "../../../assets/MovieRadar-Search_SectionIMG.png";
 import responsive_section from "../../../assets/MovieRadar-Responsive_Sect-2.png";
 import detail_section from "../../../assets/MovieRadar-Detail_Section.png";

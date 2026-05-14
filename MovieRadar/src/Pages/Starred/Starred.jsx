@@ -6,7 +6,7 @@ import NavbarMain from "../../Components/NavbarMain/NavbarMain";
 
 
 export const Starred = () => {
-  const { starredMovies ,handleStarred} = useContext(MovieRadarContext);
+  const { starredMovies ,handleStarred, handleMovieDetail} = useContext(MovieRadarContext);
   console.log(starredMovies);
 
   return (
@@ -14,21 +14,34 @@ export const Starred = () => {
 
         <NavbarMain />
 
+            <h1 className= 'strConteinerHeading'> Your Starred Movies... </h1>
 
         {/*----- Starred Navbar -----*/}
         <div className="strdContainer">
-            <h1> Your Starred Movies... </h1>
             {starredMovies.map((movie) => (
-              <div className="strdCards" key={movie.id}>
+              <div className="strdCards" key={movie.id} onClick={() => handleMovieDetail(movie.id)}>
 
-                  <FaRegBookmark className='strdIcon'onClick={handleStarred(movie.id)}/> 
+                  
 
                             {/* https://image.tmdb.org/t/p/w500=> This is the Base URL 
                                 of TMDB for Images(It is Required to Access IMG)*/}
                   <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                     
-                  <h2> { movie.title } </h2>
-                  <p> Rating: {movie.vote_average} </p>
+                  <div className="cardDet">
+
+                        <div className="cardInfo">
+                            <h2> { movie.title } </h2>
+                            <p> ⭐ Rating: { movie.vote_average  } </p>
+                        </div>
+ 
+                        <div className="cardIcon">
+                            <button className='strCardIcon'
+                                    onClick={(e) =>{ e.stopPropagation();
+                                                     handleStarred(movie) }}    
+                            > <FaRegBookmark /> </button>
+                        </div>
+                    
+                    </div>
               </div>
             ))}
         </div>

@@ -65,6 +65,7 @@ const Context = ({ children }) => {
 
         setLoading(true);
         setError(null);
+
       } catch {
         setError("Error in Fetching Data.");
       } finally {
@@ -72,6 +73,7 @@ const Context = ({ children }) => {
       }
     }
   }
+
 
 
 
@@ -101,6 +103,7 @@ const Context = ({ children }) => {
     });
   }
 
+  
 
   //Movie Detail on Popup =>
     const [selectedMovie, setSelectedMovie] = useState(null);

@@ -39,7 +39,12 @@
     height: clamp(280px, 320px, 350px);
     border-radius: 10px;
     /* object-fit: cover; */
+    transition-duration: 2s ease;
 }
+.addImage img:hover {
+    transform: scale(1.01);
+}
+
 .addCrdData {
     width: 45%;
     text-align: center;
