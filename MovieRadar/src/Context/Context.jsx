@@ -91,7 +91,7 @@ const Context = ({ children }) => {
     localStorage.setItem("starredMovies", JSON.stringify(starredMovies));
   }, [starredMovies]);
 
-  function handleStarred(movie) {
+  function handleStarred(movie) { 
     setStarredMovies((prev) => {
       console.log("Added To Starred");
 

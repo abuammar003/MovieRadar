@@ -17,6 +17,7 @@
     padding: 0px 0px 20px 0px;
     gap: 1rem;
 }
+
 .addCard {
     display: flex;
     justify-content: space-between;
@@ -28,6 +29,11 @@
     /* gap: 1rem; */
 }
 
+/* Reverse Add Cards */
+.addCardReverse {
+    flex-direction: row-reverse;
+}
+
 .addImage {
     width: 50%;
     display: flex;
@@ -35,7 +41,7 @@
 }
 .addImage img {
     width: 100%;
-    /* width: auto; */
+    /* width: auto; */ 
     height: clamp(280px, 320px, 350px);
     border-radius: 10px;
     /* object-fit: cover; */
@@ -62,7 +68,7 @@
 
 
 @media (max-width: 668px) {
-    .addCard {
+    .addCard, .addCardReverse {
         flex-direction: column;
         justify-content: center;
         align-items: center;

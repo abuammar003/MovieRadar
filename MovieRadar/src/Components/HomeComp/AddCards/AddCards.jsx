@@ -8,7 +8,7 @@ import detail_section from "../../../assets/MovieRadar-Detail_Section.png";
 const AddCards = () => {
 
     const frameCards = [ 
-    {
+    { 
       image: trending_section,
       title: "Stay Updated With Trending Movies",
       description: "Discover what’s popular in the movie world with real-time ratings, release details, and trending titles."
@@ -17,6 +17,7 @@ const AddCards = () => {
       image: search_section,
       title: "Search & Explore Movies Easily",
       description: "Find detailed movie information instantly including storylines, cast, genres, and audience ratings."
+    
     },
     {
       image: responsive_section,
@@ -33,8 +34,10 @@ const AddCards = () => {
   return (
     <div>
         <div className="addCardsMain">
-        {frameCards.map((item) => (
-            <div className="addCard" key={item}>
+        {frameCards.map((item, index) => (
+
+            <div className={`addCard ${index % 2 !== 0 ? 'addCardReverse' : ""}`}  key={item}>
+
               <div className="addCrdData">
                 <h1>{item.title}</h1>
                 <p>{item.description}</p>
@@ -44,6 +47,7 @@ const AddCards = () => {
                 <img src={item.image} alt="" />
               </div>
             </div>  
+
         ))
         }
       </div>
