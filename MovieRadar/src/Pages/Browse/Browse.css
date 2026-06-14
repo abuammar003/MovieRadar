@@ -63,6 +63,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     gap: 0.3rem;
+    /* position: relative; */
 }
 
 
@@ -78,14 +79,23 @@ h1 {
     font-weight: 500;
 }
 
-
 .cardIcon .strCardIcon {
     background-color: transparent;
     font-size: clamp(13px, 1.5vw, 17px);
-    /* background-color: red; */
     border: none;
-    /* display: none; */
 }
+
+.strCardIcon.active {
+    color: white;
+}
+
+
+/* .strCardIcon {
+    background-color: transparent;
+    font-size: clamp(13px, 1.5vw, 17px);
+    border: none;
+
+} */
 
 
 

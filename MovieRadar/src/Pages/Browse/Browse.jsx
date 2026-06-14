@@ -1,21 +1,20 @@
 import { useContext } from 'react';
 import "./Browse.css"; 
 // import { FaStar  } from "react-icons/fa";
-import { FaRegBookmark } from "react-icons/fa";
+import { FaRegBookmark, FaBookmark  } from "react-icons/fa";
 import { MovieRadarContext } from "../../Context/Context";
 import NavbarMain from "../../Components/NavbarMain/NavbarMain";
 import Detail from '../../Components/Details/Details';
 
 
-
-
 const Browse = () => {
     const { trendingMovies, loading, error, handleStarred, 
-            handleMovieDetail, showDetail } = useContext(MovieRadarContext);
+            handleMovieDetail, showDetail, starredMovies } = useContext(MovieRadarContext);
     // console.log(trendingMovies)
 
-  return ( 
-    <div className='brwsMain'>
+    
+    return ( 
+        <div className='brwsMain'>
 
         <NavbarMain />
        
@@ -29,8 +28,13 @@ const Browse = () => {
             {/* {error && <h1>{error}</h1>} */}
 
 
-            {!error ? ( trendingMovies.map((movie) => (
-                <div className="brwsCards" key={movie.id} onClick={() => handleMovieDetail(movie.id)} >
+            {!error ? ( trendingMovies.map((movie) => {
+                    
+                const isStarred = starredMovies.some((item) => item.id === movie.id);
+
+
+                return(
+                    <div className="brwsCards" key={movie.id} onClick={() => handleMovieDetail(movie.id)} >
 
                             {/* https://image.tmdb.org/t/p/w500=> This is the Base URL 
                                 of TMDB for Images(It is Required to Access IMG)*/}
@@ -47,12 +51,14 @@ const Browse = () => {
                             <button className='strCardIcon'
                                     onClick={(e) =>{ e.stopPropagation();
                                                      handleStarred(movie) }}    
-                            > <FaRegBookmark /> </button>
+                            > { isStarred ? <FaBookmark /> : <FaRegBookmark /> }</button>
                         </div>
                     
                     </div>
                 </div>
-            ))
+                )
+            })
+
             ) : (
                 <h1>{error}</h1>
             )

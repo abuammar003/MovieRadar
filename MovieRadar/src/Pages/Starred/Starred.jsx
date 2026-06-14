@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import "./Starred.css";
-import { FaRegBookmark } from "react-icons/fa";
+import { FaRegBookmark, FaBookmark } from "react-icons/fa";
 import { MovieRadarContext } from '../../Context/Context';
 import NavbarMain from "../../Components/NavbarMain/NavbarMain";
 
@@ -18,10 +18,12 @@ export const Starred = () => {
 
         {/*----- Starred Navbar -----*/}
         <div className="strdContainer">
-            {starredMovies.map((movie) => (
-              <div className="strdCards" key={movie.id} onClick={() => handleMovieDetail(movie.id)}>
+            {starredMovies.map((movie) => {
 
-                  
+              const isStarred = starredMovies.some((item) => item.id === movie.id);
+
+              return (
+              <div className="strdCards" key={movie.id} onClick={() => handleMovieDetail(movie.id)}>
 
                             {/* https://image.tmdb.org/t/p/w500=> This is the Base URL 
                                 of TMDB for Images(It is Required to Access IMG)*/}
@@ -37,13 +39,15 @@ export const Starred = () => {
                         <div className="cardIcon">
                             <button className='strCardIcon'
                                     onClick={(e) =>{ e.stopPropagation();
-                                                     handleStarred(movie) }}    
-                            > <FaRegBookmark /> </button>
+                                                     handleStarred(movie) }}> 
+                              { isStarred ? <FaBookmark /> : <FaRegBookmark /> }
+                            </button>
                         </div>
                     
                     </div>
               </div>
-            ))}
+            )
+            })}
         </div>
 
 
