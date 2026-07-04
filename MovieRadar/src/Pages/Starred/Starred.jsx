@@ -33,7 +33,7 @@ export const Starred = () => {
 
                         <div className="cardInfo">
                             <h2> { movie.title } </h2>
-                            <p> ⭐ Rating: { movie.vote_average  } </p>
+                            <p> ⭐ Rating: { movie.vote_average.toString().slice(0, 3) } </p>
                         </div>
  
                         <div className="cardIcon">

@@ -1,6 +1,9 @@
 import axios from "axios";
+const API_KEY = import.meta.env.VITE_API_KEY_TMDB;
 
-const API_KEY = "c51638ce214c1b6687284d5f54563887";
+
+// API_KEY is imported directly from TMDB in api.js File=>
+// const API_KEY = "c51638ce214c1b6687284d5f54563887";
 
 export const fetchTrending = () => {
     return axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`)
