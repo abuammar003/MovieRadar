@@ -5,6 +5,7 @@ import { FaRegBookmark, FaBookmark } from "react-icons/fa";
 import { MovieRadarContext } from '../../Context/Context';
 import NavbarMain from "../../Components/NavbarMain/NavbarMain";
 import Detail from '../../Components/Details/Details';
+import SerchImage from "../../assets/MovieRadar_Serch_img.png";
 
 
 const Search = () => {
@@ -12,7 +13,7 @@ const Search = () => {
             handleMovieDetail, showDetail, starredMovies } = useContext(MovieRadarContext);
    
 
-  return (
+  return ( 
     <div className='srchMain'>
 
       <NavbarMain />
@@ -39,7 +40,8 @@ const Search = () => {
 
           {/* {loading ?  <h1 className='msgContent'> Loading... </h1>  : ""} */}
 
-          {!loading && !error && result.length < 2 && <h1>Search Your Movies...</h1> }
+          {/* {!loading && !error && result.length < 2 && <h1>Search Your Movies...</h1> } */}
+          {!loading && !error && result.length < 2 && <img src={SerchImage} alt='Serch Movies Image...' className='srchPage_img'/> }
 
 
           {error && <h1 className='msgContent'> {error} </h1>}

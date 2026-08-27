@@ -2,37 +2,39 @@ import React from 'react';
 import "./NavbarMain.css";
 import { Link } from 'react-router-dom';
 import { GoHomeFill } from "react-icons/go";
-import { FaSearch } from "react-icons/fa";
-import { FaRegBookmark } from "react-icons/fa";
 import { RiArrowGoBackLine } from "react-icons/ri";
+import { IoSearch, IoBookmark } from "react-icons/io5";
+import LogoImage from "../../assets/MovieRadar-Logo.png";
 
 const NavbarMain = () => {
 
-
+ 
   return (
-    <div className="navMain">
+    <header className="navMain">
             <div className="navLogo">
-                <h1><span>M</span>OVIE<span>R</span>ADAR</h1>
+                {/* <h1><span>M</span>OVIE<span>R</span>ADAR</h1> */}
+
+                <img src={LogoImage} alt='' />
             </div>
 
 
-            <div className="navMainIcons">
+            <nav className="navMainIcons">
                 <Link to='/Browse'>
                     <button className='navIcon'> <GoHomeFill /> </button>
                 </Link>
                 <Link to='/Search'>
-                    <button className='navIcon'> <FaSearch /> </button>
+                    <button className='navIcon'> <IoSearch /> </button>
                 </Link>
                 <Link to='/Starred'>
-                    <button className='navIcon'> <FaRegBookmark /> </button>
+                    <button className='navIcon'> <IoBookmark /> </button>
                 </Link>
                 <Link to='/'>
                     <button className='navIcon'> <RiArrowGoBackLine /> </button>
                 </Link>
-            </div> 
+            </nav> 
 
 
-        </div>
+        </header>
   )
 }
 

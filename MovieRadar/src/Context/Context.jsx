@@ -8,25 +8,26 @@ const Context = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-
+ 
   //Fetching Trending Movies =>
-  const [trendingMovies, setTrendingMovies] = useState(() => {
-    const saved = localStorage.getItem("movieData");
-    return saved ? JSON.parse(saved) : [];
-  });
+  // const [trendingMovies, setTrendingMovies] = useState(() => {
+  //   const saved = localStorage.getItem("movieData");
+  //   return saved ? JSON.parse(saved) : [];
+  // });
 
-  useEffect(() => {
-    localStorage.setItem("movieData", JSON.stringify(trendingMovies));
-  }, [trendingMovies]);
-
+  // useEffect(() => {
+  //   localStorage.setItem("movieData", JSON.stringify(trendingMovies));
+  // }, [trendingMovies]);
+  
+  const [trendingMovies, setTrendingMovies] = useState([]);
   useEffect(() => {
     async function fetchData() {
       try {
-        setLoading(true);
-
+        
         const response = await fetchTrending();
         setTrendingMovies(response.data.results);
-
+        
+        setLoading(true);
         setError(null);
 
       } catch (error) {
@@ -43,15 +44,16 @@ const Context = ({ children }) => {
 
   // Fetching Search Movies =>
   const [query, setQuery] = useState("");
-  const [result, setResult] = useState(() => {
-    const saved = localStorage.getItem("result");
-    return saved ? JSON.parse(saved) : [];
-  });
+  // const [result, setResult] = useState(() => {
+  //   const saved = localStorage.getItem("result");
+  //   return saved ? JSON.parse(saved) : [];
+  // });
 
-  useEffect(() => {
-    localStorage.setItem("result", JSON.stringify(result));
-  }, [result]);
+  // useEffect(() => {
+  //   localStorage.setItem("result", JSON.stringify(result));
+  // }, [result]);
 
+   const [result, setResult] = useState([])
   async function handleSearch(e) {
     const value = e.target.value;
     setQuery(value);

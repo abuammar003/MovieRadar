@@ -2,17 +2,17 @@ import React from 'react';
 // import {Link} from 'react-router-dom';
 import "./Frame.css";
 import { Link } from 'react-router-dom';
-// import { FaSearch, FaStar  } from "react-icons/fa";
-// import { GoHomeFill } from "react-icons/go";
-
+import LogoImage from "../../../assets/MovieRadar-Logo.png";
 
 const Frame = () => {
 
   return (
     <div className='frameContainer'>
+      
         <div className="navFrame">
         <div className="navLogoFrame">
-          <h1><span>M</span>OVIE<span>R</span>ADAR</h1>
+          {/* <h1><span>M</span>OVIE<span>R</span>ADAR</h1> */}
+          <img src={LogoImage} alt='MovieRadar' />
         </div>
 
         <div className="navLinkFrame">

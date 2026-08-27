@@ -23,9 +23,9 @@ const Browse = () => {
         {/*----- Browse Container -----*/}
         <div className="brwsContainer">
 
-            {/* {loading && <h1>Loading...</h1>} */}
+            {loading && <h1>Loading...</h1>}
 
-            {/* {error && <h1>{error}</h1>} */}
+            {error && <h1>{error}</h1>}
 
 
             {!error ? ( trendingMovies.map((movie) => {

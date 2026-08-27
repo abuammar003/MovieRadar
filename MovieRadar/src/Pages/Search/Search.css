@@ -34,6 +34,16 @@
 }
 
 
+/*---------------- Search Image => search.length < 1 ----------------*/
+.srchPage_img {
+    width: 50%;
+    height: 75vh;
+ 
+}
+.srchPage_img:hover {
+    transform: scale(1);
+}
+
 
 
 /*----- Search Container ------*/

@@ -1,13 +1,16 @@
 import React from 'react';
 import "./Footer.css";
 import { FaGithub, FaLinkedin, FaInstagram  } from "react-icons/fa";
+import MovieRadar_Logo from "../../assets/MovieRadar-Logo.png";
 
 const Footer = () => {
 
   return (
     <div className="footer">
 
-        <h1><span>M</span>OVIE<span>R</span>ADAR</h1>
+        {/* <h1><span>M</span>OVIE<span>R</span>ADAR</h1> */}
+
+        <img src={MovieRadar_Logo} alt='MovieRadar' className='logo-img' />
         <p>MovieRadar helps you discover and explore detailed information about movies, including ratings, release dates, cast, and story summaries — all in one place.</p>
        
         <div className='footerContact'>
