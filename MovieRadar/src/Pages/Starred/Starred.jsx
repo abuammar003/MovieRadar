@@ -3,18 +3,21 @@ import "./Starred.css";
 import { FaRegBookmark, FaBookmark } from "react-icons/fa";
 import { MovieRadarContext } from '../../Context/Context';
 import NavbarMain from "../../Components/NavbarMain/NavbarMain";
+import SavedMoviesTitle from "../../assets/Saved_Movies_Title.png";
 
 
 export const Starred = () => {
   const { starredMovies ,handleStarred, handleMovieDetail} = useContext(MovieRadarContext);
   console.log(starredMovies);
 
-  return (
+  return ( 
     <div className='strdMain'> 
 
         <NavbarMain />
 
-            <h1 className= 'strConteinerHeading'> Your Starred Movies... </h1>
+            {/* <h1 className= 'strConteinerHeading'> Your Starred Movies... </h1> */}
+
+            <img src={SavedMoviesTitle} alt='Your Saved Movies..' className='strCntrHedImg' />
 
         {/*----- Starred Navbar -----*/}
         <div className="strdContainer">

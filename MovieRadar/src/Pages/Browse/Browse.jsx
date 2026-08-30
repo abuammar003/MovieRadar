@@ -5,8 +5,9 @@ import { FaRegBookmark, FaBookmark  } from "react-icons/fa";
 import { MovieRadarContext } from "../../Context/Context";
 import NavbarMain from "../../Components/NavbarMain/NavbarMain";
 import Detail from '../../Components/Details/Details';
+import TrendingMoviesTitle from "../../assets/Trending_Movies_Title.png";
 
-
+ 
 const Browse = () => {
     const { trendingMovies, loading, error, handleStarred, 
             handleMovieDetail, showDetail, starredMovies } = useContext(MovieRadarContext);
@@ -19,7 +20,10 @@ const Browse = () => {
         <NavbarMain />
        
 
-            <h1 className='brwsConteinerHeading'>Trending Movies</h1>
+            {/* <h1 className='brwsConteinerHeading'>Trending Movies</h1> */}
+
+            <img src={TrendingMoviesTitle} alt='Trending Movies' className='brwsCntrHedImg'/>
+
         {/*----- Browse Container -----*/}
         <div className="brwsContainer">
 
